@@ -1,7 +1,10 @@
 /build
 /app/build
+/app/.cxx
 /.gradle
 /.idea
+/.kiro
+/.project
+/.settings
 /local.properties
-/DiskUsage.iml
-/app/app.iml
+*.iml

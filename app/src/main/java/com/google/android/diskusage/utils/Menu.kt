@@ -8,7 +8,7 @@ import android.view.SubMenu
 import androidx.annotation.ColorInt
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
-import splitties.resources.drawable
+import com.google.android.diskusage.utils.Ui.drawableCompat
 
 fun MenuItem.setup(
     @DrawableRes icon: Int,
@@ -21,7 +21,7 @@ fun MenuItem.setup(
             iconTintList = ColorStateList.valueOf(iconTint)
             setIcon(icon)
         } else {
-            setIcon(AppHelper.appContext.drawable(icon)?.apply { setTint(iconTint) })
+            setIcon(AppHelper.appContext.drawableCompat(icon)?.apply { setTint(iconTint) })
         }
     }
     if (showAsAction) {

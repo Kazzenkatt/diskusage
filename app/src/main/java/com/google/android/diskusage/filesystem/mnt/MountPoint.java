@@ -94,7 +94,7 @@ public class MountPoint {
     init = true;
 
     for (final PortableFile dir : PortableFileImpl.getExternalAppFilesDirs()) {
-      String path = dir.getAbsolutePath().replaceFirst("/Android/data/com.google.android.diskusage/files", "");
+      String path = dir.getAbsolutePath().replaceFirst("/Android/data/[^/]+/files", "");
       Timber.d("MountPoint.initMountPoints: mountpoint %s", path);
       boolean internal = !dir.isExternalStorageRemovable();
       String title =  internal ? context.getString(R.string.storage_card) : path;

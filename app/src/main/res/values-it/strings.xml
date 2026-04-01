@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">DiskUsage</string>
+    <string name="app_name">DiskUsage2</string>
     <string name="app_description">Programma per l\'analisi del contenuto memoria disco e recuperare spazio disco.</string>
     <string name="scaning_directories">Analisi cartelle...</string>
     <string name="button_show">Visualizza</string>
@@ -11,7 +11,7 @@
     <string name="install_oi_file_manager">Installa Solid Explorer per visualizzare le cartelle</string>
     <string name="title_for_path">%s</string>
     <string name="title_in_oi_file_manager">Solid Explorer</string>
-    <string name="button_text_in_oi_file_manager">Ritorna a DiskUsage</string>
+    <string name="button_text_in_oi_file_manager">Ritorna a DiskUsage2</string>
     <string name="no_viewer_found">Nessun visualizzatore disponibile</string>
     <string name="ask_to_delete_directory">Eliminare la cartella %s?</string>
     <string name="ask_to_delete_file">Eliminare il file %s?</string>

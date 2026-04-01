@@ -38,7 +38,7 @@ import android.view.animation.Interpolator;
 import androidx.annotation.NonNull;
 import java.util.ArrayList;
 import java.util.Arrays;
-import splitties.toast.ToastKt;
+import com.google.android.diskusage.utils.Ui;
 
 public class FileSystemState {
 
@@ -99,7 +99,7 @@ public class FileSystemState {
 
     @Override
     public void warnOnFileSelect() {
-      context.handler.post(() -> ToastKt.toast(R.string.warn_on_file_select));
+      context.handler.post(() -> Ui.toast(R.string.warn_on_file_select));
     }
 
     @Override

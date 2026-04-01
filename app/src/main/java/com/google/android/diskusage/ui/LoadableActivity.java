@@ -38,7 +38,7 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.TreeMap;
 
-import splitties.toast.ToastKt;
+import com.google.android.diskusage.utils.Ui;
 
 public abstract class LoadableActivity extends AppCompatActivity {
     private static final Map<String, PersistantActivityState> persistantActivityState =
@@ -68,7 +68,7 @@ public abstract class LoadableActivity extends AppCompatActivity {
                     .setTitle(activity.getString(R.string.out_of_memory))
                     .setOnCancelListener(dialog -> activity.finish()).create().show();
         } catch (Throwable t) {
-            ToastKt.toast("DiskUsage is out of memory. Sorry.");
+            Ui.toast("DiskUsage is out of memory. Sorry.");
         }
     }
 

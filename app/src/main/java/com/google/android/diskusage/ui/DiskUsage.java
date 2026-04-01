@@ -70,7 +70,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
-import splitties.toast.ToastKt;
+import com.google.android.diskusage.utils.Ui;
 
 public class DiskUsage extends LoadableActivity {
 
@@ -218,7 +218,7 @@ public class DiskUsage extends LoadableActivity {
     if (entry != null) {
       BackgroundDelete.startDelete(this, entry);
     } else {
-      ToastKt.toast("Oops. Can't find directory to be deleted.");
+      Ui.toast("Oops. Can't find directory to be deleted.");
     }
   }
 
@@ -228,7 +228,7 @@ public class DiskUsage extends LoadableActivity {
     Timber.d("Deletion requested for %s", path);
 
     if (entry instanceof FileSystemEntrySmall) {
-      ToastKt.toast("Delete directory instead");
+      Ui.toast("Delete directory instead");
       return;
     }
     if (entry.children == null || entry.children.length == 0) {
@@ -331,7 +331,7 @@ public class DiskUsage extends LoadableActivity {
       } catch (ActivityNotFoundException|FileUriExposedException ignored) {
       }
 
-      ToastKt.toast(R.string.no_viewer_found);
+      Ui.toast(R.string.no_viewer_found);
       return;
     }
 
@@ -360,7 +360,7 @@ public class DiskUsage extends LoadableActivity {
         Log.e("diskusage", "Can't open viewer and crash", ignored);
       }
     }
-    ToastKt.toast(R.string.no_viewer_found);
+    Ui.toast(R.string.no_viewer_found);
   }
 
   public void rescan() {
@@ -518,7 +518,7 @@ public class DiskUsage extends LoadableActivity {
       handler.post(progressUpdater);
       rootElement = scanner.scan(mountPoint);
       handler.removeCallbacks(progressUpdater);
-    } catch (RuntimeException e) {
+    } catch (RuntimeException | IOException e) {
       final Scanner scanner = new Scanner(20, stats.blockSize, stats.busyBlocks, heap);
       progressUpdater = makeProgressUpdater(scanner, stats);
       handler.post(progressUpdater);

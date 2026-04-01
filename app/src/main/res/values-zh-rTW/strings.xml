@@ -20,7 +20,7 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  -->
 <resources>
-    <string name="app_name">磁碟詳情</string>
+    <string name="app_name">磁碟詳情2</string>
 <string name="app_description">有效地檢查 SD 卡內容并能清理空間。</string>
 <string name="scaning_directories">正在掃瞄內容表...</string>
 <string name="button_show">顯示</string>

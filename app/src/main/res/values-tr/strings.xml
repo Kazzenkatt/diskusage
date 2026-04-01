@@ -18,7 +18,7 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  -->
 <resources>
-    <string name="app_name">DiskUsage</string>
+    <string name="app_name">DiskUsage2</string>
 <string name="app_description">SD kartını inceleyip temizlemenize olanak sağlar.</string>
 <string name="scaning_directories">Dizinler taranıyor...</string>
 <string name="button_show">Göster</string>
@@ -27,9 +27,9 @@
 <string name="button_cancel">İptal</string>
 <string name="button_background">Arka plan</string>
 <string name="install_oi_file_manager">Dizinleri görmek için &quot;Solid Explorer&quot;\'ı kurunuz</string>
-<string name="title_for_path">%s - DiskUsage</string>
+<string name="title_for_path">%s - DiskUsage2</string>
 <string name="title_in_oi_file_manager">Solid Explorer</string>
-<string name="button_text_in_oi_file_manager">DiskUsage\'a dön</string>
+<string name="button_text_in_oi_file_manager">DiskUsage2\'a dön</string>
 <string name="no_viewer_found">Hiçbir görüntüleyici bulunamadı</string>
 <string name="ask_to_delete_directory">%s dizinini silmek istediğinizden emin misiniz?</string>
 <string name="ask_to_delete_file">%s dosyasını silmek istediğinizden emin misiniz?</string>

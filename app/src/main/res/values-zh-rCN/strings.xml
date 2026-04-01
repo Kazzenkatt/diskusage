@@ -67,7 +67,7 @@
     <string name="show_apk_desc">显示应用文件。</string>
     <string name="show_data">显示数据</string>
     <string name="show_dalvikcache">显示 Dalvik 缓存</string>
-    <string name="app_name">磁盘详情</string>
+    <string name="app_name">磁盘详情2</string>
     <string name="apps_bulk_uninstall_not_supported">不支持卸载多个应用</string>
     <string name="app_storage">应用存储</string>
     <string name="change_filter">筛选…</string>

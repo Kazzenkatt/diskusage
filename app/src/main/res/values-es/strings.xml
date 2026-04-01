@@ -18,7 +18,7 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  -->
 <resources>
-<string name="app_name">DiskUsage</string>
+<string name="app_name">DiskUsage2</string>
 <string name="app_description">Utilidad para examinar el contenido de la tarjeta SD y liberar espacio.</string>
 <string name="scaning_directories">Escaneando directorios...</string>
 <string name="button_show">Mostrar</string>
@@ -29,7 +29,7 @@
 <string name="install_oi_file_manager">Instalar &quot;Solid Explorer&quot; para ver los directorios</string>
 <string name="title_for_path">%s</string>
 <string name="title_in_oi_file_manager">Solid Explorer</string>
-<string name="button_text_in_oi_file_manager">Volver a DiskUsage</string>
+<string name="button_text_in_oi_file_manager">Volver a DiskUsage2</string>
 <string name="no_viewer_found">No se ha encontrado un visor</string>
 <string name="ask_to_delete_directory">¿Borrar el directorio %s?</string>
 <string name="ask_to_delete_file">¿Borrar el archivo %s?</string>

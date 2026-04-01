@@ -18,7 +18,7 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  -->
 <resources>
-    <string name="app_name">DiskUsage</string>
+    <string name="app_name">DiskUsage2</string>
 <string name="app_description">Narzędzie do sprawdzania zawartości karty SD i czyszczenia na niej miejsca.</string>
 <string name="scaning_directories">Skanowanie katalogów...</string>
 <string name="button_show">Pokaż</string>
@@ -29,7 +29,7 @@
 <string name="install_oi_file_manager">Zainstaluj &quot;Solid Explorer&quot; aby przeglądać katalogi</string>
 <string name="title_for_path">%s</string>
 <string name="title_in_oi_file_manager">Solid Explorer</string>
-<string name="button_text_in_oi_file_manager">Wróć do DiskUsage</string>
+<string name="button_text_in_oi_file_manager">Wróć do DiskUsage2</string>
 <string name="no_viewer_found">Nie znaleziono przeglądającego</string>
 <string name="ask_to_delete_directory">Usuń katalog %s?</string>
 <string name="ask_to_delete_file">Usunąć plik %s?</string>
@@ -76,10 +76,10 @@
 <string name="graph_system_data">Dane systemowe</string>
 <string name="ask_view">Podgląd</string>
 <string name="dialog_usage_access_title">Wymagane uprawnienie dostępu do użytkowania</string>
-<string name="dialog_usage_access_desc">Zezwolić DiskUsage na uzyskanie listy zainstalowanych aplikacji?</string>
+<string name="dialog_usage_access_desc">Zezwolić DiskUsage2 na uzyskanie listy zainstalowanych aplikacji?</string>
 <string name="dialog_external_storage_access_error">Odmówiono dostępu do pamięci zewnętrznej.</string>
     <string name="dialog_ask_filemanager_title">Brak zgodnego menedżera plików</string>
-    <string name="dialog_ask_filemanager_desc">Nie znaleziono zgodnego menedżera plików.\n\nPoproś swojego ulubionego dewelopera menedżerów plików o integrację z DiskUsage lub zainstaluj:\n * Solid Explorer\n * Menedżer plików OI</string>
+    <string name="dialog_ask_filemanager_desc">Nie znaleziono zgodnego menedżera plików.\n\nPoproś swojego ulubionego dewelopera menedżerów plików o integrację z DiskUsage2 lub zainstaluj:\n * Solid Explorer\n * Menedżer plików OI</string>
     <string name="button_install_filemanager">Install Solid Explorer</string>
     <string name="graph_media">Media</string>
     <string name="graph_apps">Apki</string>

@@ -23,7 +23,7 @@ import com.google.android.diskusage.filesystem.entity.FileSystemSuperRoot
 import com.google.android.diskusage.filesystem.mnt.MountPoint
 import com.google.android.diskusage.utils.AppIconCache.getOrLoadBitmap
 import com.google.android.diskusage.utils.item
-import splitties.resources.styledColor
+import com.google.android.diskusage.utils.Ui.styledColor
 import timber.log.Timber
 
 class DiskUsageMenu(val diskusage: DiskUsage) {

@@ -19,7 +19,6 @@
 
 package com.google.android.diskusage.ui;
 
-import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AppOpsManager;
@@ -32,12 +31,10 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.Settings;
-import android.util.Log;
-import android.widget.Toast;
 import com.google.android.diskusage.R;
 import com.google.android.diskusage.databinding.ActivityCommonBinding;
 import com.google.android.diskusage.filesystem.mnt.MountPoint;
-import splitties.toast.ToastKt;
+import com.google.android.diskusage.utils.Ui;
 import timber.log.Timber;
 
 public class PermissionRequestActivity extends Activity {
@@ -64,6 +61,13 @@ public class PermissionRequestActivity extends Activity {
             finish();
             return;
         }
+
+        // Always check external storage permission first
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R && !Environment.isExternalStorageManager()) {
+            requestExternalStoragePermission();
+            return;
+        }
+
         if ((!mountPoint.hasApps()) || isAccessGranted()) {
             forwardToDiskUsage();
             return;
@@ -78,8 +82,6 @@ public class PermissionRequestActivity extends Activity {
                 })
                 .setNegativeButton(android.R.string.cancel, (dialogInterface, i12) ->
                         forwardToDiskUsage()).create().show();
-
-        requestExternalStoragePermission();
     }
 
     public void forwardToDiskUsage() {
@@ -101,9 +103,11 @@ public class PermissionRequestActivity extends Activity {
         } else if (requestCode == PERMISSION_REQUEST_EXTERNAL_STORAGE_CODE) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
                 if (Environment.isExternalStorageManager()) {
-                    forwardToDiskUsage();
+                    // Restart the flow to check remaining permissions
+                    recreate();
                 } else {
-                    ToastKt.toast(R.string.dialog_external_storage_access_error);
+                    Ui.toast(R.string.dialog_external_storage_access_error);
+                    finish();
                 }
             }
         }
@@ -114,31 +118,21 @@ public class PermissionRequestActivity extends Activity {
             if (Environment.isExternalStorageManager()) {
                 forwardToDiskUsage();
                 return;
-            } else {
-                try {
-                    final Intent i = new Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
-                    i.setData(Uri.parse("package:" + getPackageName()));
-                    startActivityForResult(i, PERMISSION_REQUEST_EXTERNAL_STORAGE_CODE);
-                    return;
-                } catch (Exception e) {
-                    Log.d("diskusage", "failed to obtain all files access", e);
-                }
             }
-        }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE
-                ) == PackageManager.PERMISSION_GRANTED &&
-                checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE
-                ) == PackageManager.PERMISSION_GRANTED) {
-                forwardToDiskUsage();
-            } else {
-                requestPermissions(
-                        new String[] {
-                                Manifest.permission.READ_EXTERNAL_STORAGE,
-                                Manifest.permission.WRITE_EXTERNAL_STORAGE
-                        },
-                        PERMISSION_REQUEST_EXTERNAL_STORAGE_CODE
-                );
+            try {
+                Intent i = new Intent(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION);
+                i.setData(Uri.parse("package:" + getPackageName()));
+                startActivityForResult(i, PERMISSION_REQUEST_EXTERNAL_STORAGE_CODE);
+            } catch (Exception e) {
+                Timber.e(e, "Failed to open app-specific files access settings, trying generic");
+                try {
+                    Intent i = new Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
+                    startActivityForResult(i, PERMISSION_REQUEST_EXTERNAL_STORAGE_CODE);
+                } catch (Exception e2) {
+                    Timber.e(e2, "Failed to open files access settings");
+                    Ui.toast(R.string.dialog_external_storage_access_error);
+                    finish();
+                }
             }
         }
     }

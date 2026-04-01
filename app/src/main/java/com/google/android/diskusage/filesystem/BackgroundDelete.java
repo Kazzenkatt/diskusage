@@ -35,8 +35,7 @@ import com.google.android.diskusage.ui.DiskUsage;
 import timber.log.Timber;
 import java.io.File;
 import java.io.IOException;
-import splitties.resources.TextResourcesKt;
-import splitties.toast.ToastKt;
+import com.google.android.diskusage.utils.Ui;
 
 public class BackgroundDelete extends Thread {
   ProgressDialog dialog;
@@ -65,28 +64,28 @@ public class BackgroundDelete extends Thread {
     file = new File(deleteRoot);
     for (MountPoint mountPoint : MountPoint.getMountPoints(diskUsage)) {
       if ((mountPoint.getRoot() + "/").startsWith(deleteRoot + "/")) {
-        ToastKt.longToast("This delete operation will erase entire storage - canceled.");
+        Ui.longToast("This delete operation will erase entire storage - canceled.");
         return;
       }
     }
 
     if (!file.exists()) {
-      ToastKt.longToast(TextResourcesKt.appStr(R.string.path_doesnt_exist, path));
+      Ui.longToast(Ui.appStr(R.string.path_doesnt_exist, path));
       diskUsage.fileSystemState.removeInRenderThread(entry);
       return;
     }
 
     if (file.isFile()) {
       if (file.delete()) {
-        ToastKt.toast(R.string.file_deleted);
+        Ui.toast(R.string.file_deleted);
         diskUsage.fileSystemState.removeInRenderThread(entry);
       } else {
-        ToastKt.toast(R.string.error_file_wasnt_deleted);
+        Ui.toast(R.string.error_file_wasnt_deleted);
       }
       return;
     }
     dialog = new ProgressDialog(diskUsage);
-    dialog.setMessage(TextResourcesKt.appStr(R.string.deleting_path, path));
+    dialog.setMessage(Ui.appStr(R.string.deleting_path, path));
     dialog.setIndeterminate(true);
     dialog.setButton(DialogInterface.BUTTON_POSITIVE, diskUsage.getString(R.string.button_background),
             (dialog, which) -> {
@@ -162,13 +161,13 @@ public class BackgroundDelete extends Thread {
             deletionStatus, numDeletedDirectories, numDeletedFiles);
 
     if (deletionStatus == DELETION_SUCCESS) {
-      ToastKt.longToast(TextResourcesKt.appStr(R.string.deleted_n_directories_and_n_files,
+      Ui.longToast(Ui.appStr(R.string.deleted_n_directories_and_n_files,
               numDeletedDirectories, numDeletedFiles));
     } else if (deletionStatus == DELETION_CANCELED) {
-      ToastKt.longToast(TextResourcesKt.appStr(R.string.deleted_n_directories_and_files_and_canceled,
+      Ui.longToast(Ui.appStr(R.string.deleted_n_directories_and_files_and_canceled,
               numDeletedDirectories, numDeletedFiles));
     } else {
-      ToastKt.longToast(TextResourcesKt.appStr(R.string.deleted_n_directories_and_n_files_and_failed,
+      Ui.longToast(Ui.appStr(R.string.deleted_n_directories_and_n_files_and_failed,
               numDeletedDirectories, numDeletedFiles));
     }
 

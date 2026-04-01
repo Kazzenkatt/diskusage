@@ -18,7 +18,7 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  -->
 <resources>
-    <string name="app_name">DiskUsage</string>
+    <string name="app_name">DiskUsage2</string>
 <string name="app_description">Utility to examine SD card content and cleanup some space there.</string>
 <string name="scaning_directories">Scanning directories...</string>
 <string name="button_show">Show</string>
@@ -29,7 +29,7 @@
 <string name="install_oi_file_manager">Install &quot;Solid Explorer&quot; to view directories</string>
 <string name="title_for_path">%s</string>
 <string name="title_in_oi_file_manager">Solid Explorer</string>
-<string name="button_text_in_oi_file_manager">Return to DiskUsage</string>
+<string name="button_text_in_oi_file_manager">Return to DiskUsage2</string>
 <string name="no_viewer_found">No viewer found</string>
 <string name="ask_to_delete_directory">Delete %s directory?</string>
 <string name="ask_to_delete_file">Delete %s file?</string>
@@ -76,10 +76,10 @@
 <string name="graph_system_data">System data</string>
 <string name="ask_view">View</string>
 <string name="dialog_usage_access_title">Usage Access Permission Needed</string>
-<string name="dialog_usage_access_desc">Allow DiskUsage to get list of installed apps?</string>
+<string name="dialog_usage_access_desc">Allow DiskUsage2 to get list of installed apps?</string>
 <string name="dialog_external_storage_access_error">Access to external storage has been denied.</string>
     <string name="dialog_ask_filemanager_title">Missing compatible file manager</string>
-    <string name="dialog_ask_filemanager_desc">No compatible filemanager found.\n\nAsk you favorite file manager developer for integration with DiskUsage or install:\n * Solid Explorer\n * OI File Manager</string>
+    <string name="dialog_ask_filemanager_desc">No compatible filemanager found.\n\nAsk you favorite file manager developer for integration with DiskUsage2 or install:\n * Solid Explorer\n * OI File Manager</string>
     <string name="button_install_filemanager">Install Solid Explorer</string>
     <string name="graph_media">Media</string>
     <string name="graph_apps">Apps</string>

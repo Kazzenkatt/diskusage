@@ -18,7 +18,7 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  -->
 <resources>
-    <string name="app_name">DiskUsage</string>
+    <string name="app_name">DiskUsage2</string>
     <string name="app_description">Programma om het geheugengebruik te bekijken en ruimte te maken.</string>
     <string name="scaning_directories">Mappen aan het scannen...</string>
     <string name="button_show">Toon</string>
@@ -29,7 +29,7 @@
     <string name="install_oi_file_manager">Installeer &quot;Solid Explorer&quot; om mappen te bekijken</string>
     <string name="title_for_path">%s</string>
     <string name="title_in_oi_file_manager">Solid Explorer</string>
-    <string name="button_text_in_oi_file_manager">Terug naar DiskUsage</string>
+    <string name="button_text_in_oi_file_manager">Terug naar DiskUsage2</string>
     <string name="no_viewer_found">Geen viewer gevonden</string>
     <string name="ask_to_delete_directory">Map %s verwijderen?</string>
     <string name="ask_to_delete_file">Bestand %s verwijderen?</string>
